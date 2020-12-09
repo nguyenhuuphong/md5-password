@@ -1,0 +1,26 @@
+extends ./com.pug  
+block content
+	h1 Cập nhật
+	if errors
+		each error in errors
+			.alert.alert-danger= error
+	form.ml-4(action="" method="POST" style="display:flex; flex-direction:column; width:500px; height:auto; gap: 12px;")
+		input(type="text" name="name" placeholder="tên" value= data.name)
+		input(type="text" name="age" placeholder="độ tuổi" value= data.age)
+		input(type="text" name="email" placeholder="email" value= data.email)
+		input(type="text" name="password" placeholder="mật khẩu" value= data.password)
+			
+		p phân quyền người dùng
+		if data.isAdmin
+			input#com(type='radio' name='isAdmin' value='false')
+			label(for='com') user
+			br
+			input#com(type='radio' name='isAdmin' checked value='true')
+			label(for='com') Admin
+		else 
+			input#com(type='radio' name='isAdmin' checked value='false')
+			label(for='com') user
+			br
+			input#com(type='radio' name='isAdmin'  value='true')
+			label(for='com') Admin
+		button(type="submit") Cập nhật tài khoản

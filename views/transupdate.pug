@@ -1,0 +1,13 @@
+h1 chỉnh sửa tình trạng sách
+form( action=""   method="POST")
+  input(type='text' name='userId' value=trans.userId) 
+  input(type='text' name='bookId' value=trans.bookId) 
+  p chọn tình trạng sách
+  input#male(type='radio' name='isComplete' checked='' value=trans.isComplete)
+  label(for='male') chưa trả sách
+  br
+  input#female(type='radio' name='isComplete' value='true')
+  label(for='female') đã trả sách
+
+  br
+  input(type='submit' value="cập nhật")

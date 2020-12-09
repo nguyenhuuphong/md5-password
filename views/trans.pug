@@ -1,0 +1,13 @@
+h1 Sách đã cho mượn
+a(href="/transaction/create") tạo mới						
+	ul 
+		each transaction in transactions
+			if transaction.user.name && transaction.book.title
+				li #{transaction.user.name} đã mượn sách #{transaction.book.title} ___status:
+				if transaction.isComplete == 'true'
+					span Đã hoàn thành
+				else
+					if transaction.id
+						a(href="/transaction/" + transaction.id + "/complete") Chưa hoàn thành
+
+

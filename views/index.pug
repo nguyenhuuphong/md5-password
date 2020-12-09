@@ -1,0 +1,17 @@
+extends ./com.pug  
+block content
+
+	h1 kho sách của bạn
+
+	a(href="/books/create") thêm sách
+	br
+	a(href="/user") Người thuê sách
+	br 
+	form(action="/books", method="GET")
+		input(type="text", name="q")
+		button search
+	ul
+		each user in todo
+			li= user.title + "  "
+			a(href="/books/" + user.id + "/delete") xóa
+			a(href="/books/" + user.id + "/update") cập nhật        

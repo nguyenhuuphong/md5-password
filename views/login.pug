@@ -1,0 +1,10 @@
+extends ./com.pug  
+block content
+	h1 Login
+	if errors
+		each error in errors
+			.alert.alert-danger= error
+	form(action="" method="POST" style="display:flex; flex-direction:column; width:500px; height:auto; gap: 12px;")
+		input(type="text" name="email" placeholder="tên đăng nhập" value= values ? values.email : '')
+		input(type="password" name="password" placeholder=" mật khẩu" value= values ? values.password : '')
+		button(type="submit") Đăng Nhập

@@ -1,0 +1,14 @@
+h1 Danh sách người thuê sách
+a(href="/user/add") thêm người mới
+br
+br
+form(action="/user/search", method="GET")
+	input(type="text", name="q")
+	button(type="submit") Search
+
+ul
+	each user in users
+		li= user.name + "& age:" + user.age  + "   "
+			a(href="/user/" + user.id + "/delete") xóa__
+			a(href="/user/" + user.id + "/update") cập nhật__
+			a(href="/user/" + user.id ) xem

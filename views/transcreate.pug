@@ -1,0 +1,23 @@
+h1 Cho mượn sách theo tên
+hr
+
+form(action='/transaction/create' method="POST")
+  label(for='userId') Chọn 1 userId:
+  select(name='userId')
+    each user in users 
+      option(value=user.id)= user.name
+  
+  label(for='bookId') Chọn 1 BookId:
+  select(name='bookId')
+    each book in books
+      option(value=book.id)= book.title
+  br    
+  p tình trạng sách
+  input#com(type='radio' name='isComplete' checked='' value='false')
+  label(for='com') Chưa trả
+  br
+  input#com(type='radio' name='isComplete' value='true')
+  label(for='com') Đã trả sách
+  br
+  br
+  input(type='submit' value="tạo mới")
